@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const githubFollowing = document.querySelector('#following');
     const githubFollowers = document.querySelector('#followers');
 
-    fetch('https://api.github.com/users/cieliocas')
+    fetch('https://api.github.com/users/Cieliocas')
         .then(response => response.json())
         .then(data => {
             githubName.innerHTML = data.name;
@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
             githubRepository.innerHTML = data.public_repos;
             githubFollowing.innerHTML = data.following;
             githubFollowers.innerHTML = data.followers;
-        });
-
-
-})
+        })
+        .catch(error => console.error(error));
+});
